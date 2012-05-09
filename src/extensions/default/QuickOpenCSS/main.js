@@ -147,7 +147,7 @@ define(function (require, exports, module) {
     QuickOpen.addQuickOpenPlugin(
         {
             name: "CSS Selectors",
-            fileTypes: ["css"],
+            fileTypes: ["css", "scss"],
             done: done,
             search: search,
             match: match,

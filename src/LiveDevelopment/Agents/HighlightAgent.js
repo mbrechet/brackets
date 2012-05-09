@@ -54,6 +54,7 @@ define(function HighlightAgent(require, exports, module) {
             Inspector.DOM.hideHighlight();
             break;
         case "css":
+        case "scss":
             RemoteAgent.call("hideHighlight");
             break;
         }

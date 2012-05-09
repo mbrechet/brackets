@@ -63,8 +63,9 @@ define(function (require, exports, module) {
             return {name: "javascript", json: true};
 
         case "css":
+        case "scss":
             return "css";
-
+           
         case "less":
             return "less";
 

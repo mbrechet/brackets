@@ -101,6 +101,7 @@ function RemoteFunctions() {
         case "html":
             return highlight ? "#eec" : "#ffe";
         case "css":
+        case "scss":
             return highlight ? "#cee" : "#eff";
         case "js":
             return highlight ? "#ccf" : "#eef";

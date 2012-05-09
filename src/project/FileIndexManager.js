@@ -195,8 +195,8 @@ define(function (require, exports, module) {
 
         // inner helper function
         function _scanDirectoryRecurse(dirEntry) {
-            // skip invisible directories on mac
-            if (brackets.platform === "mac" && dirEntry.name.charAt(0) === ".") {
+            // skip invisible directories on mac and windows (No Need .svn
+            if (dirEntry.name.charAt(0) === ".") {
                 return;
             }
 
@@ -212,7 +212,7 @@ define(function (require, exports, module) {
                         // or scanning additional directories once a max has been hit. Also notify the 
                         // user once via a dialog. This limit could be increased
                         // if files were indexed in a worker thread so scanning didn't block the UI
-                        if (state.fileCount > 10000) {
+                        if (state.fileCount > 100000) {
                             if (!state.maxFilesHit) {
                                 state.maxFilesHit = true;
                                 _showMaxFilesDialog();
@@ -391,7 +391,7 @@ define(function (require, exports, module) {
         "css",
         function (entry) {
             var filename = entry.name;
-            return PathUtils.filenameExtension(filename) === ".css";
+            return PathUtils.filenameExtension(filename) === ".css" ||  PathUtils.filenameExtension(filename) === ".scss";
         }
     );
     
